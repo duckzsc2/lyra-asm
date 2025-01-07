@@ -1,0 +1,45 @@
+/* Landing page specific styles */
+.reports-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.report-item {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    border-left: 3px solid #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.report-item:hover {
+    transform: translateX(5px);
+    background-color: #e9ecef;
+}
+
+.report-link {
+    text-decoration: none;
+    color: #2c3e50;
+    display: block;
+}
+
+.no-reports {
+    text-align: center;
+    color: #6c757d;
+    padding: 20px;
+}
+
+.loading {
+    text-align: center;
+    color: #6c757d;
+    padding: 20px;
+}
+
+.error {
+    text-align: center;
+    color: #dc3545;
+    padding: 20px;
+} 

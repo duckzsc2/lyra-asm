@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.target-domain {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #3498db;
+}
+.summary, .web-services {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.finding {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.critical { border-left: 5px solid #e74c3c; }
+.high { border-left: 5px solid #e67e22; }
+.medium { border-left: 5px solid #f1c40f; }
+.low { border-left: 5px solid #3498db; }
+.info { border-left: 5px solid #2ecc71; }
+.severity-badge {
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.timestamp {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+h1, h2 { margin: 0; }
+.stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.stat-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+}
+.web-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.web-services-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+    border-left: 3px solid #2c3e50;
+}
+.web-services-count {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+} 

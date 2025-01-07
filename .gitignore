@@ -1,0 +1,9 @@
+*.csv
+*.json
+*.html
+*.txt
+*.sh
+*.go
+*.env
+*.cursorrules
+output/
