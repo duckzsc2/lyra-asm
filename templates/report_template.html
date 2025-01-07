@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lyra Report</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lyra Report</h1>
+            <p class="target-domain">Target: {target_domain}</p>
+            <p>Generated on: {timestamp}</p>
+        </div>
+        
+        <div class="summary">
+            <h2>Summary</h2>
+            <div class="stats">
+                {severity_stats}
+            </div>
+        </div>
+
+        <div class="web-services">
+            <h2>Discovered Web Services</h2>
+            <p class="web-services-count">Total services found: {web_services_count}</p>
+            <ul class="web-services-list">
+                {web_services_list}
+            </ul>
+        </div>
+
+        <div class="findings">
+            <h2>Detailed Findings</h2>
+            {findings}
+        </div>
+    </div>
+</body>
+</html> 

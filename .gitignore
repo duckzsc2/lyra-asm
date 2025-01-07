@@ -1,6 +1,5 @@
 *.csv
 *.json
-*.html
 *.txt
 *.sh
 *.go

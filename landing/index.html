@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lyra - Scan Reports</title>
+    <link rel="stylesheet" href="../templates/styles.css">
+    <link rel="stylesheet" href="landing.css">
+    <script>
+        // Function to load and display reports
+        function loadReports() {
+            const reportsList = document.getElementById('reportsList');
+            
+            // Get all files from the output directory
+            fetch('../output/')
+                .then(response => response.text())
+                .then(html => {
+                    // Parse the directory listing
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const files = Array.from(doc.querySelectorAll('a'))
+                        .filter(link => link.href.endsWith('_nuclei_report.html'))
+                        .sort((a, b) => b.href.localeCompare(a.href));  // Sort by name descending
+
+                    if (files.length === 0) {
+                        reportsList.innerHTML = '<div class="no-reports">No scan reports available</div>';
+                        return;
+                    }
+
+                    // Clear any loading message
+                    reportsList.innerHTML = '';
+
+                    // Create list items for each report
+                    files.forEach(file => {
+                        const domain = file.href.split('/').pop().replace('_nuclei_report.html', '');
+                        const item = document.createElement('div');
+                        item.className = 'report-item';
+                        item.innerHTML = `
+                            <a href="../output/${file.href.split('/').pop()}" class="report-link">
+                                <strong>${domain}</strong>
+                            </a>
+                        `;
+                        reportsList.appendChild(item);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading reports:', error);
+                    reportsList.innerHTML = '<div class="error">Error loading reports: ' + error.message + '</div>';
+                });
+        }
+
+        // Load reports when page loads
+        window.onload = loadReports;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lyra Scan Reports</h1>
+            <p>Click on a report to view details</p>
+        </div>
+        
+        <div class="reports-list" id="reportsList">
+            <div class="loading">Loading reports...</div>
+        </div>
+    </div>
+</body>
+</html> 
